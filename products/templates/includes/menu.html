@@ -1,0 +1,22 @@
+<h1>{{ test }}</h1>
+<div class="col-lg-3 left-menu">
+    <div class="dropdown">
+        <h1 class="" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">my items</h1>
+        <span class="caret"></span>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            {% for r in req_items %}
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/product/{{ r.product.id }}/">{{ r.product.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="dropdown">
+        <h1 class="" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">pinerest</h1>
+        <span class="caret"></span>
+        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">link</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">link</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="">link</a></li>
+        </ul>
+    </div>
+
+</div>

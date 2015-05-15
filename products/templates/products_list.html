@@ -1,0 +1,36 @@
+{% extends 'home.html' %}
+{% load staticfiles %}
+{% block title %}home{% endblock %}
+
+{% block content %}
+
+    <div class="col-lg-offset-3 col-lg-7 search-field">
+        <div class="pull-left">
+            <input type="text"/>
+        </div>
+        <div class="pull-left">
+            <a class="search-submit" href="">SEARCH</a>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    {% include 'includes/menu.html' %}
+
+    {% for product in products %}
+        <div class="col-lg-3 product">
+            <a href="/product/{{ product.id }}/"><img src="{{ MEDIA_URL }}{{ product.image }}" alt=""/></a>
+            <div class="product-desc">
+                <div class="product-rating">
+                    <div class="stars-{{ product.rating }}"></div>
+                </div>
+                <div class="product-price">${{ product.price|floatformat:2 }}</div>
+            </div>
+            <div class="product-info">
+                <h1>{{ product.title }}</h1>
+                <p>{{ product.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'home.html' %}
+{% load staticfiles %}
+{% block title %}home{% endblock %}
+
+{% block content %}
+
+    <div class="col-lg-offset-3 col-lg-7 search-field">
+        <div class="pull-left">
+            <input type="text"/>
+        </div>
+        <div class="pull-left">
+            <a class="search-submit" href="">SEARCH</a>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+            {% include 'includes/menu.html' %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2">
+                {% for r in requested %}
+                    <div class="requested-image">
+                        <a href="/product/{{ r.product.id }}/"><img src="{{ MEDIA_URL }}{{ r.product.image }}" alt=""/></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-lg-3">
+                {% for r in requested %}
+                    <div class="requested">
+                        <h2><a href="/product/{{ r.product.id }}/">{{ r.product.title }}</a></h2>
+                        <h1>${{ r.product.price }}</h1>
+                        <p>{{ r.product.description }}</p>
+                    </div>
+                {% endfor %}
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-lg-offset-1 col-lg-3">
+                <div class="latest">
+                    <h1>my requested items</h1>
+                    <a href="/product/{{ latest.product.id }}/"><img src="{{ MEDIA_URL }}{{ latest.product.image }}" alt=""/></a>
+                    <div class="product-desc">
+                        <div class="product-rating">
+                            <div class="stars-{{ latest.product.rating }}"></div>
+                        </div>
+                        <div class="product-price">${{ latest.product.price|floatformat:2 }}</div>
+                    </div>
+                    <div class="product-info">
+                        <h1><a href="/product/{{ latest.product.id }}/">{{ latest.product.title }}</a></h1>
+                        <p>{{ latest.product.description }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

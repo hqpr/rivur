@@ -1,0 +1,417 @@
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('../fonts/OpenSans-Bold.eot');
+  src: url('../fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/OpenSans-Bold.woff2') format('woff2'),
+  url('../fonts/OpenSans-Bold.woff') format('woff'),
+  url('../fonts/OpenSans-Bold.ttf') format('truetype'),
+  url('../fonts/OpenSans-Bold.svg#OpenSans-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Roboto-Regular';
+  src: url('../fonts/Roboto-Regular.eot');
+  src: url('../fonts/Roboto-Regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/Roboto-Regular.woff2') format('woff2'),
+  url('../fonts/Roboto-Regular.woff') format('woff'),
+  url('../fonts/Roboto-Regular.ttf') format('truetype'),
+  url('../fonts/Roboto-Regular.svg#Roboto-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family:"Lato Light";
+  src:url("../fonts/Lato-Light.eot?") format("eot"),
+  url("../fonts/Lato-Light.woff") format("woff"),
+  url("../fonts/Lato-Light.ttf") format("truetype"),
+  url("../fonts/Lato-Light.svg#Lato-Light") format("svg");
+  font-weight:normal;font-style:normal;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans.eot');
+  src: url('../fonts/OpenSans.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/OpenSans.woff2') format('woff2'),
+  url('../fonts/OpenSans.woff') format('woff'),
+  url('../fonts/OpenSans.ttf') format('truetype'),
+  url('../fonts/OpenSans.svg#OpenSans') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* colors */
+@white: #fefefe;
+@violet: #663366;
+@grey: #cccccc;
+@dark-grey: #333333;
+
+html,body{
+  height:100%;
+  margin:0;
+  padding:0;
+}
+.clearfix {
+  width: 100%;
+}
+.container-full {
+  width: 100%;
+  background: url(../images/index_bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  padding: 40px 0;
+}
+
+.header {
+  padding-top: 10px;
+
+}
+.top-menu {
+  text-align: right;
+  .auth {
+    margin-bottom: 30px;
+    font: normal 13px/13px Roboto-Regular;
+    text-transform: none;
+    a {
+      color: @white;
+    }
+    .login-lnk {
+      text-transform: uppercase;
+      background: #20092a;
+      -webkit-border-radius: 54px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      padding: 10px;
+      opacity: 0.7;
+      margin-left: 20px;
+    }
+  }
+  font: normal 13px/13px OpenSans-Bold;
+  color: @white;
+  text-transform: uppercase;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+    margin-left: 40px;
+    a {
+      color: @white;
+    }
+  }
+}
+.share {
+  margin-top: 150px;
+  input[type="text"]
+  {
+    background: transparent;
+    border: 1px solid @white;
+    -webkit-border-radius: 54px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    outline: none;
+    color: @white;
+    padding-left: 15px;
+    width: 100%;
+    height: 70px;
+    font: normal 25px/25px Roboto-Regular;
+    margin-bottom: 50px;
+  }
+  label {
+    font: normal 38px/38px Lato Light;
+    color: @white;
+    padding-bottom: 20px;
+  }
+  .pin {
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+}
+
+.footer {
+  position:absolute;
+  bottom: 50px;
+  font: normal 15px/15px OpenSans-Bold;
+  color: @white;
+  left: 25%;
+}
+
+/* home */
+.home-header {
+  width: 100%;
+  background: @violet;
+  height: auto;
+  padding: 20px 0;
+}
+
+.products {
+  background: url("../images/products_bg.png");
+  font: normal 9px/9px OpenSans;
+  color: @grey;
+//  min-height: 800px;
+  .left-menu {
+    h1 {
+      font: normal 17px/17px OpenSans-Bold;
+      color: @dark-grey;
+      text-transform: uppercase;
+    }
+  }
+  .search-field {
+    margin-top: 30px;
+    input[type="text"]
+    {
+      border: 1px solid @white;
+      border-radius: 5px;
+      outline: none;
+      color: @dark-grey;
+      padding-left: 15px;
+      width: 100%;
+      height: 64px;
+      font: normal 25px/25px Roboto-Regular;
+      margin-bottom: 50px;
+    }
+    .search-submit {
+      color: @white;
+      text-transform: uppercase;
+      font: normal 25px/25px OpenSans-Bold;
+      background: url("../images/search_06.png");
+      width: 135px;
+      height: 64px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 5px;
+      padding-top: 20px;
+      margin-left: 10px;
+      &:hover {
+        text-decoration: none;
+        opacity: 0.8;
+      }
+    }
+  }
+  .product {
+    img {
+      width: 100%;
+    }
+    .product-desc {
+      background: #9c8aa5;
+      width: 100%;
+      height: 32px;
+      margin-top: 5px;
+    }
+    .product-rating {
+      float: left;
+      width: 50%;
+      padding-top: 10px;
+      padding-left: 5px;
+
+      .stars-3 {
+        background: url("../images/3-stars.png") no-repeat;
+        height: 12px;
+      }
+
+    }
+    .product-price {
+      float: right;
+      color: @white;
+      font-size: 18px;
+      padding-top: 10px;
+      font-weight: bold;
+      padding-right: 5px;
+
+    }
+    .product-info {
+      margin-top: -5px;
+      h1 {
+        font: normal 13px/13px OpenSans-Bold;
+        color: #333333;
+      }
+      p {
+        font-size: 11px;
+        color: #cccccc;
+        line-height: 10px;
+      }
+    }
+  }
+}
+
+
+.home-footer {
+  padding-top: 20px;
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  background: @dark-grey;
+  width: 100%;
+  color: #666666;
+  font: normal 11px/11px OpenSans;
+
+  a {
+    font: normal 11px/11px OpenSans-Bold;
+    color: @white;
+  }
+  .botom-menu {
+    text-align: right;
+    ul {
+      list-style-type: none;
+    }
+    li {
+      display: inline-block;
+      font: normal 13px/13px Roboto-Regular;
+      padding-left: 30px;
+      a {
+        color: #666666;
+      }
+    }
+  }
+}
+
+/* single product */
+
+.product-title {
+  h1 {
+    font: normal 30px/30px OpenSans-Bold;
+    color: @dark-grey;
+  }
+}
+.request-button {
+  margin-top: 20px;
+  .request-submit {
+    background: url("../images/request.png") no-repeat;
+    width: 198px;
+    height: 66px;
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+.single-product {
+  img {
+    width: 100%;
+    -webkit-border-radius: 54px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  p {
+    margin-top: 10px;
+    color: #999999;
+    font: normal 20px/20px OpenSans;
+  }
+  .single-product-thumb {
+    margin-top: 10px;
+    width: 120px;
+    height: 130px;
+    float: left;
+    margin-right: 20px;
+
+    img {
+      -webkit-border-radius: 54px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+  }
+}
+.requested-image {
+  margin-bottom: 15px;
+  img {
+    width: 100%;
+  }
+}
+
+.requested {
+  h2 {
+    font: normal 22px/10px OpenSans-Bold;
+    color: @dark-grey;
+    a {
+      color: @dark-grey;
+      &:hover {
+        opacity: 0.7;
+        text-decoration: none;
+      }
+    }
+  }
+  h1 {
+    font: normal 34px/10px OpenSans;
+    color: @dark-grey;
+    padding-bottom: 10px;
+  }
+  p {
+    font: normal 12px/12px OpenSans;
+    color: #999999;
+  }
+}
+.latest {
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  text-align: center;
+  -webkit-border-radius: 54px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 15px;
+  h1 {
+    font: normal 17px/17px OpenSans-Bold;
+    color: @dark-grey;
+    text-transform: uppercase;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.product-desc {
+  background: #9c8aa5;
+  width: 100%;
+  height: 32px;
+  margin-top: 5px;
+}
+.product-rating {
+  float: left;
+  width: 50%;
+  padding-top: 10px;
+  padding-left: 5px;
+
+  .stars-3 {
+    background: url("../images/3-stars.png") no-repeat;
+    height: 12px;
+  }
+
+}
+.product-price {
+  float: right;
+  color: @white;
+  font-size: 18px;
+  padding-top: 10px;
+  font-weight: bold;
+  padding-right: 5px;
+
+}
+.product-info {
+  margin-top: -5px;
+  h1 {
+    font: normal 13px/13px OpenSans-Bold;
+    color: #333333;
+  }
+  p {
+    font-size: 11px;
+    color: #cccccc;
+    line-height: 10px;
+  }
+  a {
+    color: #333333;
+  }
+}
+
+.dropdown-menu {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}

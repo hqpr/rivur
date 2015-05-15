@@ -1,0 +1,51 @@
+{% extends 'home.html' %}
+{% load staticfiles %}
+{% block title %}{{ product.title }}{% endblock %}
+{% block content %}
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class=" col-lg-offset-3 col-lg-5 product-title">
+                    <h1>{{ product.title }} $ {{ product.price }}</h1>
+                </div>
+                {% if not requested %}
+                    <div class="col-lg-3 request-button">
+                        <form action="{% url 'add' product_id=product.id %}" method="post">
+                            {% csrf_token %}
+                            <input type="submit" value="" class="request-submit"/>
+                        </form>
+                    </div>
+                    {% else %}
+                    <h1><a href="{% url 'requested' %}">Requested</a></h1>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                {% include 'includes/menu.html' %}
+                <div class="col-lg-5 single-product">
+                    <img src="{{ MEDIA_URL }}{{ product.image }}" alt=""/>
+                    {% if product.second_image %}
+                        <div class="single-product-thumb"><a class="fancybox" href="{{ MEDIA_URL }}{{ product.second_image }}" data-fancybox-group="gallery"><img src="{{ MEDIA_URL }}{{ product.second_image }}" alt="" /></a></div>
+                    {% endif %}
+                    {% if product.third_image %}
+                        <div class="single-product-thumb"><a class="fancybox" href="{{ MEDIA_URL }}{{ product.third_image }}" data-fancybox-group="gallery"><img src="{{ MEDIA_URL }}{{ product.third_image }}" alt="" /></a></div>
+                    {% endif %}
+                    {% if product.fourth_image %}
+                        <div class="single-product-thumb"><a class="fancybox" href="{{ MEDIA_URL }}{{ product.fourth_image }}" data-fancybox-group="gallery"><img src="{{ MEDIA_URL }}{{ product.fourth_image }}" alt="" /></a></div>
+                    {% endif %}
+
+
+                    <div class="clearfix"></div>
+                    <p>{{ product.description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}
